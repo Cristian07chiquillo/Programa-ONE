@@ -1,0 +1,296 @@
+/* Importa la fuente 'Inter' desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Define las variables de color y fuente para su uso en todo el CSS */
+:root{
+    --white: #FFFFFF; /* Color blanco */
+    --color-primario: #F3F5FC; /* Color primario del fondo */
+    --color-terciario: #0A3871; /* Color terciario para botones y texto */
+    --color-cuaternario: #D8DFE8; /* Color de fondo de los botones */
+
+    --fuente-inter: "Inter", sans-serif; /* Fuente principal para el texto */
+    --fuente-krona: "Krona One", sans-serif; /* Fuente alternativa para textos destacados */
+}
+
+/* Establece el padding y margin a 0 para todos los elementos */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Contenedor principal que ocupa toda la ventana del navegador */
+.container{
+    display: flex;
+    box-sizing: border-box;
+    width: 100vw; /* Ancho completo de la ventana */
+    height: 100vh; /* Alto completo de la ventana */
+    background-color: var(--color-primario); /* Fondo primario */
+}
+
+/* Sección para el contenido de encriptación */
+.encriptar{
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 60%; /* Ancho del 60% del contenedor */
+    height: 100%; /* Alto completo del contenedor */
+}
+
+/* Estilo para el logo dentro del contenedor de encriptación */
+.logo{
+    padding: 40px; /* Espaciado interno de 40px */
+}
+
+/* Estilo general para el contenedor de texto */
+.texto{
+    top: 130px; /* Posiciona el contenedor a 130px desde la parte superior */
+    left: 240px; /* Posiciona el contenedor a 240px desde la izquierda */
+}
+
+/* Estilo para el área de texto dentro del contenedor de texto */
+.texto textarea{
+    position: absolute;
+    width: 680px; /* Ancho del área de texto */
+    height: 288px; /* Alto del área de texto */
+    font-family: var(--fuente-inter); /* Fuente usada en el texto */
+    font-size: 32px; /* Tamaño de la fuente */
+    font-weight: 400; /* Grosor de la fuente */
+    color: var(--color-terciario); /* Color del texto */
+    border: none; /* Sin borde */
+    background-color: var(--color-primario); /* Fondo del área de texto */
+    resize: none; /* Evita el redimensionamiento del área de texto */
+}
+
+/* Estilo para el texto de marcador de posición en el área de texto */
+.texto textarea::placeholder{
+    font-family: var(--fuente-inter);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--color-terciario);
+}
+
+/* Elimina el borde y el contorno cuando el área de texto está en foco o activa */
+.texto:focus,
+.texto:active{
+    border: none;
+    outline: none;
+}
+
+/* Estilo para la sección de condiciones */
+.condiciones{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    left: 240px; /* Posiciona la sección a 240px desde la izquierda */
+    bottom: 120px; /* Posiciona la sección a 120px desde la parte inferior */
+    gap: 5px; /* Espacio entre elementos */
+    padding: 0%; /* Sin padding */
+}
+
+/* Estilo para los iconos dentro de la sección de condiciones */
+.icono{
+    width: 16px; /* Ancho del icono */
+    height: 16px; /* Alto del icono */
+}
+
+/* Estilo para los párrafos dentro de la sección de condiciones */
+.condiciones p {
+    font-family: var(--fuente-inter); /* Fuente para el texto */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px; /* Tamaño de la fuente */
+    color: #495057; /* Color del texto */
+    background-color: var(--color-primario); /* Fondo del párrafo */
+    line-height: 150%; /* Altura de línea */
+    opacity: 0.8; /* Opacidad del texto */
+    flex: none; /* Evita que el texto se expanda */
+}
+
+/* Estilo para la sección de botones */
+.botones{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1% 0;
+    position: absolute;
+    width: 680px; /* Ancho de la sección de botones */
+    left: 240px; /* Posiciona la sección a 240px desde la izquierda */
+    bottom: 30px; /* Posiciona la sección a 30px desde la parte inferior */
+    gap: 50px; /* Espacio entre botones */
+}
+
+/* Estilo para el botón de encriptación */
+.btn-encriptar{
+    align-items: center;
+    justify-content: center;
+    padding: 24px; /* Espaciado interno del botón */
+    width: 340px; /* Ancho del botón */
+    background-color: var(--color-terciario); /* Fondo del botón */
+    border: #0A3871 solid; /* Borde del botón */
+    border-width: 1px; /* Ancho del borde */
+    border-color: var(--color-terciario); /* Color del borde */
+    border-radius: 24px; /* Esquinas redondeadas */
+    font-family: var(--fuente-inter); /* Fuente del texto */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px; /* Tamaño de la fuente */
+    color: var(--white); /* Color del texto */
+    text-align: center; /* Alineación del texto */
+}
+
+/* Estilo para el botón de desencriptación */
+.btn-desencriptar{
+    align-items: center;
+    justify-content: center;
+    padding: 24px; /* Espaciado interno del botón */
+    width: 340px; /* Ancho del botón */
+    height: 67px; /* Alto del botón */
+    border: var(--color-terciario) solid; /* Borde del botón */
+    border-width: 1px; /* Ancho del borde */
+    background-color: #D8DFE8; /* Fondo del botón */
+    border-radius: 24px; /* Esquinas redondeadas */
+    font-family: var(--fuente-inter); /* Fuente del texto */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px; /* Tamaño de la fuente */
+    color: var(--color-terciario); /* Color del texto */
+    text-align: center; /* Alineación del texto */
+}
+
+/* Cambia el fondo y el color del texto cuando se pasa el ratón sobre los botones */
+.btn-encriptar:hover, 
+.btn-desencriptar:hover{
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
+}
+
+/* Estilo para la sección de encriptado */
+.encriptado{
+    display: flex;
+    flex-direction: column;
+    width: 400px; /* Ancho de la sección */
+    height: 90%; /* Alto de la sección */
+    justify-content: center; /* Centra el contenido verticalmente */
+    position: absolute;
+    right: 40px; /* Posiciona la sección a 40px desde la derecha */
+    top: 5%; /* Posiciona la sección a 5% desde la parte superior */
+    background-color: white; /* Fondo de la sección */
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08); /* Sombra de la sección */
+    border-radius: 32px; /* Esquinas redondeadas */
+}
+
+/* Estilo para la imagen dentro de la sección de encriptado */
+.encriptado img{
+    position: absolute;
+    width: 340px; /* Ancho de la imagen */
+    height: 304px; /* Alto de la imagen */
+    right: 36px; /* Posiciona la imagen a 36px desde la derecha */
+    top: 120px; /* Posiciona la imagen a 120px desde la parte superior */
+}
+
+/* Estilo para la sección de texto indicativo */
+.texto-indicativo{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    padding: 0%; /* Sin padding */
+    gap: 16px; /* Espacio entre elementos */
+    position: absolute;
+    width: 340px; /* Ancho de la sección */
+    top: 70%; /* Posiciona la sección a 70% desde la parte superior */
+    right: 36px; /* Posiciona la sección a 36px desde la derecha */
+    text-align: center; /* Alineación del texto */
+}
+
+/* Estilo para el encabezado dentro de la sección de texto indicativo */
+.texto-indicativo h2 {
+    width: 100%; /* Ancho completo del encabezado */
+    font-family: var(--fuente-inter); /* Fuente del texto */
+    font-style: normal;
+    font-weight: 700; /* Grosor de la fuente */
+    font-size: 24px; /* Tamaño de la fuente */
+    line-height: 120%; /* Altura de línea */
+    text-align: center; /* Alineación del texto */
+    color: #343A40; /* Color del texto */
+}
+
+/* Estilo para el párrafo dentro de la sección de texto indicativo */
+.texto-indicativo p {
+    width: 100%; /* Ancho completo del párrafo */
+    font-family: var(--fuente-inter); /* Fuente del texto */
+    font-style: normal;
+    font-weight: 400; /* Grosor de la fuente */
+    font-size: 14px; /* Tamaño de la fuente */
+    line-height: 150%; /* Altura de línea */
+    text-align: center; /* Alineación del texto */
+    color: #495057; /* Color del texto */
+}
+
+/* Estilos responsivos para dispositivos con un ancho máximo de 768px */
+@media (max-width: 768px){
+    .container{
+        display: flex;
+        flex-direction: row; /* Cambia la dirección del contenedor a fila */
+        width: 100vw; /* Ancho completo de la ventana */
+        height: 100vh; /* Alto completo de la ventana */
+        background-color: var(--color-primario); /* Fondo primario */
+    }
+
+    .logo{
+        position: absolute;
+        top: 40px; /* Posiciona el logo a 40px desde la parte superior */
+        padding: 0%; /* Sin padding */
+    }
+
+    .texto{
+        position: absolute;
+        top: 20%; /* Posiciona el contenedor de texto a 20% desde la parte superior */
+        left: 24px; /* Posiciona el contenedor de texto a 24px desde la izquierda */
+    }
+
+    .condiciones{
+        position: absolute;
+        top: 680px; /* Posiciona la sección de condiciones a 680px desde la parte superior */
+        left: 48px; /* Posiciona la sección de condiciones a 48px desde la izquierda */
+    }
+
+    .botones{
+        position: absolute;
+        top: 880px; /* Posiciona la sección de botones a 880px desde la parte superior */
+        left: 48px; /* Posiciona la sección de botones a 48px desde la izquierda */
+    }
+
+    .btn-desencriptar{
+        background-color: var(--color-primario); /* Cambia el fondo del botón de desencriptar */
+    }
+
+    .btn-encriptar:hover, 
+    .btn-desencriptar:hover{
+        background-color: #D8DFE8; /* Cambia el fondo y el color del texto al pasar el ratón sobre los botones */
+        color: var(--color-terciario);
+    }
+
+    .encriptado{
+        position: absolute;
+        width: 688px; /* Ancho de la sección de encriptado */
+        height: 133px; /* Alto de la sección de encriptado */
+        top: 1001px; /* Posiciona la sección a 1001px desde la parte superior */
+        justify-content: center; /* Centra el contenido verticalmente */
+        align-items: flex-start; /* Alinea el contenido al inicio */
+    }
+
+    .encriptado img{
+        top: 0%; /* Posiciona la imagen a la parte superior */
+        display: none; /* Oculta la imagen en dispositivos pequeños */
+        visibility: hidden; /* Hace que la imagen sea invisible */
+    }
+
+    .texto-indicativo{
+        position: absolute;
+        width: 100%; /* Ancho completo de la sección */
+        top: 30%; /* Posiciona la sección a 30% desde la parte superior */
+        left: 0%; /* Posiciona la sección a la izquierda */
+    }
+}
